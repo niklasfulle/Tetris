@@ -81,24 +81,20 @@ class Playfield {
         stroke(this.background);
         strokeWeight(bs);
 
-        // offset the rectangle so that
-        // top and right borders stay in canvas
         let offset = floor(bs / 2);
         rect(offset, offset, cs * this.cols + bs - 1, cs * this.rows + bs - 1);
 
         for (let row = 0; row < this.grid.length; row++) {
             for (let col = 0; col < this.grid[row].length; col++) {
-                // offset the cells by the size of the border
                 let offset = this.borderSize;
 
                 let cs = this.cellSize;
 
-                // this.grid contains the colors of each cell
                 fill(this.grid[row][col]);
 
                 noStroke();
                 rect(cs * col + offset, cs * row + offset, cs - 1, cs - 1);
             }
         }
-    } // end of show()
+    }
 }
